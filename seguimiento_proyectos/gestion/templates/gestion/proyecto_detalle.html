@@ -1,0 +1,8 @@
+<h1>{{ proyecto.nombre }}</h1>
+<p>{{ proyecto.descripcion }}</p>
+<p>Estado: {{ proyecto.estado }}</p>
+<a href="{% url 'editar_proyecto' proyecto.pk %}">Editar</a>
+<form action="{% url 'eliminar_proyecto' proyecto.pk %}" method="POST">
+    {% csrf_token %}
+    <button type="submit">Eliminar</button>
+</form>
